@@ -1,11 +1,25 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, ChevronDown, Code, Palette, Zap, ArrowUp } from 'lucide-react';
+import {
+    Menu,
+    X,
+    Github,
+    Linkedin,
+    Mail,
+    ExternalLink,
+    ChevronDown,
+    Code,
+    Palette,
+    Zap,
+    ArrowUp,
+    WrenchIcon,
+    Lock,
+} from 'lucide-react';
+import Contact from './Contact.jsx';
 
 const Hero = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrollY, setScrollY] = useState(0);
     const [showScrollTop, setShowScrollTop] = useState(false);
-    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -88,70 +102,72 @@ const Hero = () => {
         setIsMenuOpen(false);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert('Message sent! (This is a demo)');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-    };
 
     const projects = [
         {
-            title: "E-Commerce Platform",
-            description: "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-            tech: ["React", "Node.js", "MongoDB", "Stripe"],
-            image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+            title: "WhatsApp AI Agent",
+            description: "I build intelligent WhatsApp AI agents powered by n8n that can understand and respond to voice, text, and image messages seamlessly. These agents combine the power of OpenAI and automation workflows to analyze images, transcribe and reply to audio, and maintain natural chat-like conversations — all in real time. The result is a smart, multimodal assistant that makes WhatsApp interactions feel human, responsive, and automated.",
+            tech: ["n8n", "meta", "OpenAI", "Google Drive", "Structured Parser"],
+            image: "https://res.cloudinary.com/dccjycgn1/image/upload/v1761281140/wa_ai_agent_i3xxy6.jpg",
             link: "#"
         },
         {
-            title: "AI Task Manager",
-            description: "Intelligent task management app with AI-powered priority suggestions and productivity analytics.",
-            tech: ["Next.js", "TypeScript", "OpenAI", "PostgreSQL"],
-            image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+            title: "Dataiku Core Designing & Machine Learning",
+            description: "Visual & Code-Based Development: Build ML models through intuitive visual workflows or write custom Python/R code—all in one platform. Accelerate AutoML model development. Build collaborative workflows and seamlessly move models from development to production pipelines. Track model performance, detect drift, and maintain governance with built-in monitoring and explainability tools.",
+            tech: ["Dataiku", "n8n", "Snowflake", "Python", "Supabase", "OpenAI"],
+            image: "https://res.cloudinary.com/dccjycgn1/image/upload/v1761331776/Screenshot_2025-10-24_220214_blalse.png",
+            link: "#"
+        },
+
+        {
+            title: "Retrieval Augmented Generation (RAG)",
+            description: "I build Retrieval-Augmented Generation (RAG) AI agents on WhatsApp using n8n—systems that can understand and respond to voice, text, and image messages intelligently. These agents connect with Google Drive for document retrieval, use Pinecone for vector search, and combine Google Gemini and OpenAI GPT models for reasoning and response generation.",
+            tech: ["n8n", "meta", "Pinecone", "Google Gemini","OpenAI", "PostgreSQL"],
+            image: "https://res.cloudinary.com/dccjycgn1/image/upload/v1761281598/2024_ega_sustainability_report_RAG_AI_agent_mhvskq.png",
             link: "#"
         },
         {
-            title: "Real-Time Chat App",
-            description: "WebSocket-based chat application with rooms, file sharing, and end-to-end encryption.",
-            tech: ["React", "Socket.io", "Express", "Redis"],
-            image: "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?w=800&h=600&fit=crop",
-            link: "#"
-        },
-        {
-            title: "Portfolio CMS",
-            description: "Headless CMS for creative professionals with drag-and-drop builder and SEO optimization.",
-            tech: ["Vue.js", "GraphQL", "Strapi", "AWS"],
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+            title: "DevOps Engineer",
+            description: "Results-driven DevOps Engineer experience in designing, implementing, and maintaining robust cloud infrastructure and CI/CD pipelines. Expert in container orchestration, infrastructure automation, and cloud-native technologies.",
+            tech: ["Kubernetes", "Docker", "Azure/Google Cloud Platform", "Terraform", "Github", "Infrastructure as Code","Linux/Bash"],
+            image: "https://res.cloudinary.com/dccjycgn1/image/upload/v1761326921/Devops1-2048x1338_ya2d7t.jpg",
             link: "#"
         }
     ];
 
     const skills = [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Node.js", level: 88 },
-        { name: "Python", level: 85 },
+        { name: "Dataiku", level: 90 },
+        { name: "n8n", level: 95 },
+        { name: "Zapier", level: 95 },
+        { name: "RESTful APIs", level: 95 },
+        { name: "Make.com", level: 88 },
+        { name: "Google Cloud", level: 85 },
         { name: "Tailwind CSS", level: 92 },
-        { name: "MongoDB", level: 80 },
-        { name: "GraphQL", level: 75 },
-        { name: "Docker", level: 78 }
+        { name: "React", level: 90 },
+        { name: "Github", level: 85 },
+        { name: "Docker", level: 85 },
+        { name: "Kubernetes", level: 80 },
+        { name: "Terraform", level: 80 },
     ];
 
     const services = [
         {
             icon: <Code className="w-12 h-12" />,
-            title: "Web Development",
-            description: "Building responsive, performant web applications using modern frameworks and best practices."
+            title: "Data Science, Machine Learning & Automation",
+            description: "Dataiku, n8n, Zapier, Make.com workflow development. LLM integration (OpenAI, Gemini, LangChain). API-to-AI orchestration flows and webhook routing. AI-in-the-loop task automation systems. "
         },
         {
             icon: <Palette className="w-12 h-12" />,
-            title: "UI/UX Design",
-            description: "Creating intuitive, beautiful user interfaces that provide exceptional user experiences."
+            title: "DevOps & Infrastructure Engineering",
+            description: "Git version control, CI/CD pipelines (GitHub Actions, Jenkins, CircleCI). Docker containerization & Kubernetes orchestration. Infrastructure as Code (Terraform, Helm, Ansible). Monitoring & logging (Prometheus, Grafana, ELK Stack). Load balancing, scaling, and high availability design."
+
         },
         {
-            icon: <Zap className="w-12 h-12" />,
-            title: "Performance Optimization",
-            description: "Optimizing applications for speed, SEO, and accessibility to maximize user engagement."
-        }
+            icon: <WrenchIcon className="w-12 h-12" />,
+            title: "Backend, API, Database & Security Systems",
+            description: "GCP, AWS EC2/EKS, Azure Container Apps. IAM policies, TLS/SSL encryption, token-based security. REST API, GraphQL, and OpenAPI spec creation. SQL & NoSQL setup (PostgreSQL, MySQL, Firebase, MongoDB). Authentication (OAuth2.0, ServiceAuth, SSO, API Keys). "
+        },
+
     ];
 
     return (
@@ -234,7 +250,7 @@ const Hero = () => {
                         Hi, I'm <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 bg-clip-text text-transparent">Val Castil</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-delay">
-                        AI Automation Creative Designer & DevOps
+                        AI Automation Flowgrammer & DevOps
                     </p>
                     <div className="flex gap-4 justify-center animate-fade-in-delay-2">
                         <button
@@ -266,26 +282,41 @@ const Hero = () => {
                         <div className="relative group">
                             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
                             <img
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop"
+                                src="https://res.cloudinary.com/dccjycgn1/image/upload/v1761204907/val_airport_ua7kd0.jpg"
                                 alt="Profile"
                                 className="relative rounded-lg w-full"
                             />
                         </div>
                         <div>
                             <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                                I'm a passionate AI Automation designer and developer with over 5 years of experience building exceptional time-saving AI automation. I specialize in creating workflow applications that integrates AI with powerful functionality.
+                                Innovative AI Automation Developer specializing in building scalable, intelligent workflow systems that bridge human creativity with automated precision. With hands-on expertise in visual automation platforms like Dataiku, n8n, Zapier, and Make.com, I design, orchestrate, and deploy interconnected systems that transform complex business operations into seamless, autonomous ecosystems.
                             </p>
                             <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                                My expertise spans across frontend frameworks like n8n, Zapier, Make.com, Asana, React+Vite, ReactNative, Tailwind CSS and over 100+ integrations. Backend technologies including Node.js and Python, and cloud services like GCP, AWS and Azure. I'm constantly learning and staying updated with the latest technologies to deliver cutting-edge solutions.
+                                My mission is to empower teams by pioneering AI-first workflows that address painstaking and repetitive tasks with innovative solutions. I am dedicated to driving enterprise digital transformations that convert routine operations into agile, automated processes seamlessly integrated within cloud-native, containerized environments. Leveraging Infrastructure as Code (IaC) principles, I ensure these solutions deliver unparalleled reliability, scalability, and efficiency.
                             </p>
                             <div className="flex gap-4">
-                                <a href="#" className="text-purple-500 hover:text-purple-400 transition-colors">
+                                <a
+                                    href="https://github.com/valcastil"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-purple-500 hover:text-purple-400 transition-colors"
+                                    aria-label="GitHub"
+                                >
                                     <Github className="w-6 h-6" />
                                 </a>
-                                <a href="#" className="text-purple-500 hover:text-purple-400 transition-colors">
+                                <a
+                                    href="https://www.linkedin.com/in/val-amor-castil-9952b332/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-purple-500 hover:text-purple-400 transition-colors"
+                                    aria-label="LinkedIn"
+                                >
                                     <Linkedin className="w-6 h-6" />
                                 </a>
-                                <a href="#" className="text-purple-500 hover:text-purple-400 transition-colors">
+                                <a  href="mailto:castilv@gmail.com"
+                                    className="text-purple-500 hover:text-purple-400 transition-colors"
+                                    aria-label="Email"
+                                >
                                     <Mail className="w-6 h-6" />
                                 </a>
                             </div>
@@ -383,51 +414,7 @@ const Hero = () => {
                 </div>
             </section>
 
-            <section id="contact" className="py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-                        Get In <span className="text-purple-500">Touch</span>
-                    </h2>
-                    <div className="space-y-6">
-                        <div className="grid md:grid-cols-2 gap-6">
-                            <input
-                                type="text"
-                                placeholder="Your Name"
-                                value={formData.name}
-                                onChange={(e) => setFormData({...formData, name: e.target.value})}
-                                className="w-full px-6 py-4 bg-gray-900 border border-purple-500/30 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-                            />
-                            <input
-                                type="email"
-                                placeholder="Your Email"
-                                value={formData.email}
-                                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                                className="w-full px-6 py-4 bg-gray-900 border border-purple-500/30 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-                            />
-                        </div>
-                        <input
-                            type="text"
-                            placeholder="Subject"
-                            value={formData.subject}
-                            onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                            className="w-full px-6 py-4 bg-gray-900 border border-purple-500/30 rounded-lg focus:border-purple-500 focus:outline-none transition-colors"
-                        />
-                        <textarea
-                            placeholder="Your Message"
-                            value={formData.message}
-                            onChange={(e) => setFormData({...formData, message: e.target.value})}
-                            rows={6}
-                            className="w-full px-6 py-4 bg-gray-900 border border-purple-500/30 rounded-lg focus:border-purple-500 focus:outline-none transition-colors resize-none"
-                        ></textarea>
-                        <button
-                            onClick={handleSubmit}
-                            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 py-4 rounded-lg font-semibold hover:scale-105 transition-transform"
-                        >
-                            Send Message
-                        </button>
-                    </div>
-                </div>
-            </section>
+            <Contact />
 
             <footer className="bg-black border-t border-purple-500/20 py-8 px-4">
                 <div className="max-w-6xl mx-auto text-center">
@@ -435,13 +422,28 @@ const Hero = () => {
                         © 2025 Val Castil. All rights reserved.
                     </p>
                     <div className="flex justify-center gap-6 mt-4">
-                        <a href="#" className="text-gray-400 hover:text-purple-500 transition-colors">
+                        <a
+                            href="https://github.com/valcastil"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-purple-500 transition-colors"
+                            aria-label="GitHub"
+                        >
                             <Github className="w-5 h-5" />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-purple-500 transition-colors">
+                        <a
+                            href="https://www.linkedin.com/in/val-amor-castil-9952b332/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-purple-500 transition-colors"
+                            aria-label="LinkedIn"
+                        >
                             <Linkedin className="w-5 h-5" />
                         </a>
-                        <a href="#" className="text-gray-400 hover:text-purple-500 transition-colors">
+                        <a href="mailto:castilv@gmail.com"
+                           className="text-gray-400 hover:text-purple-500 transition-colors"
+                           aria-label="Email"
+                        >
                             <Mail className="w-5 h-5" />
                         </a>
                     </div>
