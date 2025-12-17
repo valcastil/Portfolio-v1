@@ -15,6 +15,7 @@ import {
     Lock,
 } from 'lucide-react';
 import Contact from './Contact.jsx';
+import LogoShowcase from './LogoShowcase.jsx';
 
 const Hero = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -344,6 +345,8 @@ const Hero = () => {
                     </div>
                 </div>
             </section>
+
+            <LogoShowcase />
 
             <section id="projects" className="py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
                 <div className="max-w-6xl mx-auto">
