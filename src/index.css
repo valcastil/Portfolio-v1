@@ -407,18 +407,12 @@ section {
     height: 100%;
     position: absolute;
     overflow: hidden;
-    animation: marquee 60s linear infinite;
+    will-change: transform;
+    user-select: none;
+    -webkit-user-select: none;
 }
 .marquee-item {
     float: left;
-}
-@keyframes marquee {
-    0% {
-        left: 0;
-    }
-    100% {
-        left: -100%;
-    }
 }
 /* marquee end */
 
