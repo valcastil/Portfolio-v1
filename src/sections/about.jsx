@@ -19,7 +19,7 @@ const About = () => {
                     </div>
                     <div>
                         <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                            Innovative AI Automation Developer specializing in building scalable, intelligent workflow systems that bridge human creativity with automated precision. With hands-on expertise in visual automation platforms like Dataiku, n8n, Zapier, and Make.com, I design, orchestrate, and deploy interconnected systems that transform complex business operations into seamless, autonomous ecosystems.
+                            Innovative AI Automation Developer specializing in scalable and intelligent workflow ecosystems that bridge human creativity with AI precision.Orchestrate visual automation platforms (Dataiku, n8n, Zapier, make.com) and full-stack development to deploy sophisticated AI personal assistants, autonomous business operations, and cross-platform iOS/Android applications that redefine operational excellence.
                         </p>
                         <p className="text-gray-300 text-lg mb-6 leading-relaxed">
                             My mission is to empower teams by pioneering AI-first workflows that address painstaking and repetitive tasks with innovative solutions. I am dedicated to driving enterprise digital transformations that convert routine operations into agile, automated processes seamlessly integrated within cloud-native, containerized environments. Leveraging Infrastructure as Code (IaC) principles, I ensure these solutions deliver unparalleled reliability, scalability, and efficiency.
@@ -43,7 +43,7 @@ const About = () => {
                             >
                                 <Linkedin className="w-6 h-6" />
                             </a>
-                            <a  href="mailto:castilv@gmail.com"
+                            <a href="mailto:castilv@gmail.com"
                                 className="text-purple-500 hover:text-purple-400 transition-colors"
                                 aria-label="Email"
                             >
